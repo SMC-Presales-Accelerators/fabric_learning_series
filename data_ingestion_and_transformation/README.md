@@ -25,3 +25,6 @@ Inside the **(3) Production** workspace create two items:
 - A Warehouse named ProductionWarehouse
 
 You now have everything you need to get started! Let's move on to the first steps of ingesting our full dataset.
+
+- [Full Data Ingestion](1_full_ingestion/README.md)
+- [Delta Data Ingestion](2_delta_ingestion/README.md)

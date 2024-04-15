@@ -6,6 +6,7 @@ This is an overall series to help individuals get skilled up on using Fabric and
 
 - End to End Data Ingestion and Transformation
 - Security Fundamentals
+- Capacity Fundamentals
 - Spark Fundamentals
 - Data Warehousing
 - Data Governance
