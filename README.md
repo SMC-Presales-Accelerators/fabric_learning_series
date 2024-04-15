@@ -4,7 +4,7 @@ This is an overall series to help individuals get skilled up on using Fabric and
 
 ## Current and Coming Trainings
 
-- End to End Data Ingestion and Transformation
+- [End to End Data Ingestion and Transformation](data_ingestion_and_transformation/README.md)
 - Security Fundamentals
 - Capacity Fundamentals
 - Spark Fundamentals
