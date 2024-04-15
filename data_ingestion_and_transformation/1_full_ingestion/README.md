@@ -70,6 +70,10 @@ Now let's import the Spark Notebooks that will let us conform our parquet files 
 
 Right click on each link below and right click and save the notebooks to your local computer. 
 
+- [(Full Load) Conform Parquet to Delta](Notebooks/(Full%20Load)%20Conform%20Parquet%20To%20Delta.ipynb)
+- [FullSingleTable_ForParallel](Notebooks/FullSingleTable_ForParallel.ipynb)
+- [(Full Load) Curate Data](Notebooks/(Full%20Load)%20Curate%20Data.ipynb)
+
 Next go into your **(2) Conformed** workspace, click the *+ New* button and select *Import notebook*. Click the upload button to select both the notebooks for uploading.
 
 Once they have Uploaded, open both notebooks and change the default lakehouse to be your SilverLakehouse.
@@ -132,6 +136,8 @@ Now that you have the tables shortcutted to your production lakehouse, let's loa
 Open the ProductionWarehouse and click New SQL query.
 
 Copy the queries from the file below and click run. 
+
+- [(Full Load) Production Table Creation](Queries/(Full%20Load)%20Production%20Table%20Creation.sql)
 
 You have now loaded your production warehouse with your data.
 

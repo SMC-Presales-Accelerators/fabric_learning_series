@@ -1,6 +1,7 @@
 CREATE SCHEMA stg;
+GO
 
-CREATE OR ALTER PROCEDURE UpsertDimUsers
+CREATE PROCEDURE UpsertDimUsers
 AS
 BEGIN
     -- Insert all new records
@@ -38,18 +39,19 @@ BEGIN
     FROM dbo.DimUsers u
         INNER JOIN stg.UpdatedUsers uu ON u.UserId = uu.UserId
 END
+GO
 
-
-CREATE OR ALTER PROCEDURE RecreateDimKiosks
+CREATE PROCEDURE RecreateDimKiosks
 AS
 BEGIN
     DROP TABLE IF EXISTS dbo.DimKiosks;
     CREATE TABLE dbo.DimKiosks AS SELECT * FROM CuratedLakehouse.dbo.dimkiosk;
 END
+GO
 
 
 
-CREATE OR ALTER PROCEDURE UpsertDimMovies
+CREATE PROCEDURE UpsertDimMovies
 AS
 BEGIN
     -- Insert all new records into the DimMovies table
@@ -63,10 +65,10 @@ BEGIN
         WHERE   r.MovieId = l.MovieId
     )
 END
+GO
 
 
-
-CREATE OR ALTER PROCEDURE UpsertFactPurchases
+CREATE PROCEDURE UpsertFactPurchases
 AS
 BEGIN
     INSERT INTO dbo.FactPurchases
@@ -79,6 +81,7 @@ BEGIN
         WHERE   r.PurchaseLineItemId = l.PurchaseLineItemId
     )
 END
+GO
 
 -- Some extra commentary on how we are creating the views and stored procedures for the factrentals table
 -- We are creating a view that will give us the latest rental facts for each rental id
@@ -88,18 +91,18 @@ END
 -- in the fact table. This is because we are using a lakehouse and we can easily access the full history
 -- from the curated lakehouse if we need to. And we are only interested in the latest facts in the fact table,
 -- which allows us to more efficiently query the fact table.
-CREATE OR ALTER VIEW dbo.LatestRentalFacts
+CREATE VIEW dbo.LatestRentalFacts
 AS
     with cte as (
         select row_number() over (partition by RentalId
         order by DateModified desc) as rn, * 
         from CuratedLakehouse.dbo.factrentals ) 
-    select RentalId, MovieId, UserId, RentalLocationId, RentalDateId, ExpectedReturnDateId, ReturnDateId, ReturnLocationId, LateDays, RentalPrice, LateFee, TotalPrice
+    select RentalId, MovieId, UserId, RentalLocationId, RentalDateId, ExpectedReturnDateId, ReturnDateId, ReturnLocationId, LateDays, RentalPrice, LateFee, TotalPrice, DateModified
     from cte
     where rn=1;
+GO
 
-
-CREATE OR ALTER PROCEDURE UpsertFactRentals
+CREATE PROCEDURE UpsertFactRentals
 AS
 BEGIN
     INSERT INTO dbo.FactRentals
@@ -110,7 +113,7 @@ BEGIN
         SELECT  NULL
         FROM    dbo.FactRentals r
         WHERE   r.RentalId = l.RentalId
-    )
+    );
 
     DROP TABLE IF EXISTS stg.UpdatedRentals;
 
@@ -128,5 +131,6 @@ BEGIN
         r.LateFee = ur.LateFee,
         r.TotalPrice = ur.TotalPrice
     FROM dbo.FactRentals r
-        INNER JOIN stg.UpdatedRentals ur ON r.RentalId = ur.RentalId
+        INNER JOIN stg.UpdatedRentals ur ON r.RentalId = ur.RentalId;
 END
+GO
