@@ -30,7 +30,7 @@ BEGIN
         u.LastName = uu.LastName,
         u.Email = uu.Email,
         u.PhoneNumber = uu.PhoneNumber,
-        u.MemberSinceDateId = uu.MemberSinceDateId,
+        u.MemberSince = uu.MemberSince,
         u.Address = uu.Address,
         u.State = uu.State,
         u.ZipCode = uu.ZipCode,
