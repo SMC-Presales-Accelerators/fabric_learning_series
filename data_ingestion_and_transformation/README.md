@@ -4,7 +4,8 @@ In this module we will walk through moving data from a SQL Azure Database to Mic
 
 ## Prequisites
 
-Database Access - This will provided in the linked internal video
+Database Access - You can request database credentials @ [SMC Presales Accelerator Resources](https://smcacceleratorresources.azurewebsites.net/), you will just need a Github login to start.
+
 Three (3) Workspaces in Fabric backed by Trial or Provisioned capacity. The numbers are added at the beginning of the workspace names to keep them at the top of the UI.
 
 Workspace Names:
