@@ -44,9 +44,9 @@ Now we will set up the notebooks and queries needed to conform, curate, and prod
 #### Step 2.1
 Please import all three notebooks below by downloading them to your device and clicking New, Import Notebook in the **(2) Conformed** workspace.
 
-- [(Delta Load) Conform Parquet to Delta](Notebooks/(Delta%20Load)%20Conform%20Parquet%20To%20Delta.ipynb)
-- [DeltaSingleTable_ForParallel](Notebooks/DeltaSingleTable_ForParallel.ipynb)
-- [(Delta Load) Curate Data](Notebooks/(Delta%20Load)%20Curate%20Data.ipynb)
+- [(Delta Load) Conform Parquet to Delta](Notebooks/(Delta%20Load)%20Conform%20Parquet%20To%20Delta.ipynb?raw=true)
+- [DeltaSingleTable_ForParallel](Notebooks/DeltaSingleTable_ForParallel.ipynb?raw=true)
+- [(Delta Load) Curate Data](Notebooks/(Delta%20Load)%20Curate%20Data.ipynb?raw=true)
 
 Next, go through the three added notebooks and add the Default Lakehouses for each as mapped out below. 
 - (Delta Load) Conform Parquet to Delta: SilverLakehouse

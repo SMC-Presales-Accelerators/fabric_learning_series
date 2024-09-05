@@ -70,13 +70,13 @@ Now let's import the Spark Notebooks that will let us conform our parquet files 
 
 Right click on each link below and right click and save the notebooks to your local computer. 
 
-- [(Full Load) Conform Parquet to Delta](Notebooks/(Full%20Load)%20Conform%20Parquet%20To%20Delta.ipynb)
-- [FullSingleTable_ForParallel](Notebooks/FullSingleTable_ForParallel.ipynb)
-- [(Full Load) Curate Data](Notebooks/(Full%20Load)%20Curate%20Data.ipynb)
+- [(Full Load) Conform Parquet to Delta](Notebooks/(Full%20Load)%20Conform%20Parquet%20To%20Delta.ipynb?raw=true)
+- [FullSingleTable_ForParallel](Notebooks/FullSingleTable_ForParallel.ipynb?raw=true)
+- [(Full Load) Curate Data](Notebooks/(Full%20Load)%20Curate%20Data.ipynb?raw=true)
 
-Next go into your **(2) Conformed** workspace, click the *+ New* button and select *Import notebook*. Click the upload button to select both the notebooks for uploading.
+Next go into your **(2) Conformed** workspace, click the *+ New* button and select *Import notebook*. Click the upload button to select all three notebooks for uploading.
 
-Once they have Uploaded, open both notebooks and change the default lakehouse to be your SilverLakehouse.
+Once they have Uploaded, open the three notebooks and change the default lakehouse to be your SilverLakehouse.
 
 #### Step 2.3
 
@@ -98,9 +98,9 @@ Click the OneLake tile and select the SilverLakehouse.
 
 Expand the Tables node and select all the tables, click Next and then Create.
 
-Once your shortcut has been added, go back to the **(2) Conformed** workspace. Download the notebook below, and import it just like above.
+Once your shortcut has been added, go back to the **(2) Conformed** workspace. 
 
-Once imported, open the `(Full Load) Curate Data` notebook and add the CuratedLakehouse as the default lakehouse. 
+Open the `(Full Load) Curate Data` notebook you imported in Step 2.2 and add the CuratedLakehouse as the default lakehouse. 
 
 Click Run all to curate your data. If you would like you can read the Markdown comments to learn more about what each section of the notebook is doing.
 
